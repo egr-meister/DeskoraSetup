@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blueprint_navy">#FF28465F</color>
+    <color name="deep_navy">#FF1C3245</color>
+    <color name="desk_oak">#FFB88A5A</color>
+    <color name="light_desk_wood">#FFE6C79D</color>
+    <color name="app_background">#FFEFF2F3</color>
+    <color name="splash_background">#FFEFF2F3</color>
+    <color name="ic_launcher_background">#FF28465F</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
