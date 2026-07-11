@@ -76,9 +76,13 @@ fun DeskoraNavHost(viewModel: DeskoraViewModel, appData: AppData) {
                             selected = selected,
                             onClick = {
                                 navController.navigate(tab.route) {
-                                    popUpTo(navController.graph.findStartDestination().id) { saveState = true }
+                                    // Always pop back to the tab root so any open detail/editor/form
+                                    // screen is cleared. Avoids restoreState re-showing a saved
+                                    // detail screen, which made a tab appear unreachable.
+                                    popUpTo(navController.graph.findStartDestination().id) {
+                                        inclusive = false
+                                    }
                                     launchSingleTop = true
-                                    restoreState = true
                                 }
                             },
                             icon = { Icon(tab.icon, contentDescription = tab.label) },
