@@ -25,17 +25,17 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Install Android Platform 35 and Build Tools 35.0.0
+      - name: Install Android Platform 36 and Build Tools 36.0.0
         run: |
-          yes | sdkmanager "platforms;android-35" "build-tools;35.0.0" "platform-tools" >/dev/null
+          yes | sdkmanager "platforms;android-36" "build-tools;36.0.0" "platform-tools" >/dev/null
 
       - name: Set up Gradle (with cache)
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.9'
+          gradle-version: '8.13'
 
       - name: Generate Gradle wrapper (idempotent)
-        run: gradle wrapper --gradle-version 8.9
+        run: gradle wrapper --gradle-version 8.13
 
       - name: Decode release keystore
         env:
@@ -71,7 +71,7 @@ jobs:
 
       - name: Verify APK signature and certificate
         run: |
-          BUILD_TOOLS="$ANDROID_HOME/build-tools/35.0.0"
+          BUILD_TOOLS="$ANDROID_HOME/build-tools/36.0.0"
           APKSIGNER="$BUILD_TOOLS/apksigner"
           CERTS=$("$APKSIGNER" verify --print-certs "${{ steps.locate.outputs.apk }}")
           echo "$CERTS"

@@ -38,12 +38,12 @@ fun resolveSigning(): Map<String, String>? {
 
 android {
     namespace = "com.deskora.setup"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.deskora.setup"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0.0"
 

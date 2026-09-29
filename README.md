@@ -145,18 +145,18 @@ A static splash (AndroidX SplashScreen library) on a light blueprint background 
 ### Prerequisites
 - **JDK 17**
 - **Android Studio** (Koala or newer recommended)
-- **Android SDK Platform 35** and **Build Tools 35.0.0**
+- **Android SDK Platform 36** and **Build Tools 36.0.0**
 
 ### Open in Android Studio
 1. `File → Open…` and select the `DeskoraSetup` folder.
-2. Let Gradle sync. The project targets **compileSdk = 35**, **targetSdk = 35**, **minSdk = 24**, JDK 17, portrait-only.
+2. Let Gradle sync. The project targets **compileSdk = 36**, **targetSdk = 36**, **minSdk = 24**, JDK 17, portrait-only.
 3. Run the `app` configuration on a device/emulator (Android 7.0+).
 
 ### Generate the Gradle wrapper (first time)
-This repository ships the wrapper scripts but not the `gradle-wrapper.jar` binary. Generate it once with a local Gradle 8.9 install:
+This repository ships the wrapper scripts but not the `gradle-wrapper.jar` binary. Generate it once with a local Gradle 8.13 install:
 
 ```bash
-gradle wrapper --gradle-version 8.9
+gradle wrapper --gradle-version 8.13
 ```
 
 Android Studio also regenerates the wrapper automatically on first sync. CI generates it as part of the workflow.
@@ -238,8 +238,8 @@ Both the release APK and AAB use `signingConfigs.release`.
 `.github/workflows/android-build.yml` runs on push to `main` and via `workflow_dispatch`. It:
 1. checks out the repo,
 2. sets up JDK 17,
-3. installs Android SDK Platform 35 and Build Tools 35.0.0,
-4. sets up Gradle 8.9 with caching and generates the wrapper,
+3. installs Android SDK Platform 36 and Build Tools 36.0.0,
+4. sets up Gradle 8.13 with caching and generates the wrapper,
 5. decodes `ANDROID_KEYSTORE_BASE64` into a temporary PKCS12 file,
 6. exposes signing secrets only as environment variables,
 7. builds the signed release **APK** and **AAB**,
